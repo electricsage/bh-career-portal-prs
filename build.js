@@ -8,6 +8,8 @@ config = config.replace('${BULLHORN_SWIMLANE}', process.env.BULLHORN_SWIMLANE ||
 config = config.replace('${BULLHORN_CORP_TOKEN}', process.env.BULLHORN_CORP_TOKEN || 'default-corp-token');
 config = config.replace('${COMPANY_NAME}', process.env.COMPANY_NAME || 'default-company-name');
 
+console.log('Final app.json:', config);
+
 // Write final app.json
 fs.writeFileSync('app.json', config);
 console.log('app.json generated successfully!');

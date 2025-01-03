@@ -1,32 +1,91 @@
 {
-  "name": "Career Portal",
-  "description": "A Bullhorn Platform SDK app that allows candidates to search for and apply to jobs.",
-  "repository": "https://github.com/bullhorn/career-portal",
-  "logo": "http://www.bullhorn.com/wp-content/uploads/2016/08/BH16_logo_orange_blue_stacked.png",
-  "keywords": ["bullhorn", "career-portal", "jobs", "angular", "express"],
-  "env": {
-    "BULLHORN_SWIMLANE": "33",
-    "BULLHORN_CORP_TOKEN": "1BEWWG",
-    "COMPANY_NAME": "Primary Recruiting Services",
-    "HOSTED_ENDPOINT": {
-      "description": "Where is this site hosted?",
-      "required": "true"
+  "acceptedResumeTypes": [
+    "html",
+    "text",
+    "txt",
+    "pdf",
+    "doc",
+    "docx",
+    "rtf",
+    "odt"
+  ],
+  "companyName": "Primary Recruiting Services",
+  "companyLogoPath": "",
+  "companyUrl": "",
+  "careersUrl": "",
+  "defaultLocale": "en-US",
+  "supportedLocales": [
+      "en-US",
+      "en-GB",
+      "en",
+      "fr-FR",
+      "fr",
+      "es",
+      "de",
+      "it",
+      "nl",
+      "ru",
+      "zh-CN"
+  ],
+  "minUploadSize": 4096,
+  "maxRelatedJobs": 5,
+  "maxUploadSize": 5242880,
+  "service": {
+    "batchSize": 500,
+    "corpToken": "1BEWWG",
+    "port": null,
+    "swimlane": "33",
+    "fields": [
+      "id",
+      "title",
+      "publishedCategory(id,name)",
+      "address(city,state,zip)",
+      "employmentType",
+      "dateLastPublished",
+      "publicDescription",
+      "isOpen",
+      "isPublic",
+      "isDeleted",
+      "publishedZip",
+      "salary",
+      "salaryUnit"
+    ],
+    "jobInfoChips": [
+      "employmentType",
+      {
+        "type": "mediumDate",
+        "field": "dateLastPublished"
+      }
+    ],
+    "showCategory": true,
+    "keywordSearchFields": [
+      "publicDescription",
+      "title"
+    ]
+  },
+  "additionalJobCriteria": {
+    "field": "[ FILTER FIELD HERE ]",
+    "values": [
+      "[ FILTER VALUE HERE ]"
+    ],
+    "sort": "-dateLastPublished"
+  },
+  "integrations": {
+    "googleAnalytics": {
+      "trackingId": ""
     },
-    "COMPANY_WEBSITE": {
-      "description": "What is your company website?",
-      "required": "true"
-    },
-    "COMPANY_LOGO_URL": {
-      "description": "Url for you companies logo?",
-      "required": "true"
-    },
-    "GOOGLE_VERIFICATION_CODE": {
-      "description": "HTML tag Verification Code from https://www.google.com/webmasters/verification/verification",
-      "required": "true"
-    },
-    "GOOGLE_ANALYTICS_TRACKING_ID": {
-      "description": "Google Analytics Tracking ID",
-      "required": "false"
+    "googleSiteVerification": {
+      "verificationCode": ""
     }
+  },
+  "eeoc": {
+    "genderRaceEthnicity": false,
+    "veteran": false,
+    "disability": false
+  },
+  "privacyConsent": {
+    "consentCheckbox": false,
+    "sidebarLink": false,
+    "privacyPolicyUrl": "/privacy"
   }
 }
